@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hương Vị Việt Nam - Ẩm Thực Việt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf2;
+            color: #333;
+        }
+
+        header {
+            background: #a51c30;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .hero {
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+            background:
+                linear-gradient(#0008, #0008),
+                url("https://media.vov.vn/sites/default/files/styles/large/public/2023-10/am-thuc-viet-1_0.jpg")
+                center/cover;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 54px);
+            margin-bottom: 20px;
+            color: #ffd166;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd166;
+            color: #7b1726;
+            padding: 13px 25px;
+            border-radius: 30px;
+            margin-top: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #a51c30;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .search {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 30px;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+outline-color: #a51c30;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .food-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px #00000012;
+            transition: transform 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .food-info {
+            padding: 20px;
+        }
+
+        .food-info h3 {
+            color: #a51c30;
+            margin-bottom: 10px;
+        }
+
+        .food-info p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .region {
+            background: #f8ead7;
+        }
+
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .region-card {
+            background: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            border-bottom: 4px solid #a51c30;
+        }
+
+        .region-card .icon {
+            font-size: 42px;
+        }
+
+        .region-card h3 {
+            color: #a51c30;
+            margin: 12px 0;
+        }
+
+        .about {
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        footer {
+            background: #721525;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"> HƯƠNG VỊ VIỆT NAM</div>
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#foods">Món ăn</a>
+        <a href="#regions">Vùng miền</a>
+        <a href="#about">Giới thiệu</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div>
+        <h1>Khám Phá Ẩm Thực Việt Nam</h1>
+        <p>
+            Tinh hoa từ những nguyên liệu dân dã,
+            hương vị đậm đà và nét văn hóa truyền thống
+            tạo nên bản sắc riêng của ẩm thực Việt.
+        </p>
+        <a class="btn" href="#foods">Khám phá món ngon</a>
+    </div>
+</div>
+
+<section id="foods">
+    <h2 class="section-title">🍲 Món Ngon Việt Nam</h2>
+<p class="intro">
+        Mỗi món ăn là một câu chuyện về văn hóa,
+        con người và tình yêu quê hương Việt Nam.
+    </p>
+
+    <input
+        class="search"
+        type="text"
+        id="search"
+        placeholder="🔍 Tìm món ăn yêu thích..."
+        aria-label="Tìm món ăn"
+    >
+    
+    <div class="food-grid" id="foodGrid">
+
+        <article class="food-card" data-name="phở bò phở hà nội miền bắc">
+            <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=700&q=80"
+                 alt="Tô phở nóng">
+            <div class="food-info">
+                <h3>🍜 Phở Bò</h3>
+                <p>Món ăn nổi tiếng với nước dùng thơm ngon,
+                bánh phở mềm và thịt bò đậm vị. Đặc trưng của Hà Nội.</p>
+            </div>
+        </article>
+
+        <article class="food-card" data-name="bánh mì banh mi sài gòn miền nam">
+            <img src="https://images.unsplash.com/photo-1600454309261-3dc9b7597637?auto=format&fit=crop&w=700&q=80"
+                 alt="Bánh mì Việt Nam">
+            <div class="food-info">
+                <h3>🥖 Bánh Mì</h3>
+                <p>Vỏ bánh giòn rụm, nhân phong phú với pate,
+                thịt, rau thơm và nước sốt hấp dẫn.</p>
+            </div>
+        </article>
+
+        <article class="food-card" data-name="bún bò huế bun bo hue miền trung">
+            <img
+  src="https://commons.wikimedia.org/wiki/Special:FilePath/BunboHue.jpg"
+  alt="Bún bò Huế đặc sản miền Trung"
+  width="300"
+>
+            <div class="food-info">
+                <h3>🌶️ Bún Bò Huế</h3>
+                <p>Nước dùng đậm đà, thơm mùi sả,
+                vị cay đặc trưng và những lát thịt hấp dẫn.</p>
+            </div>
+        </article>
+        <article class="food-card" data-name="gỏi cuốn goi cuon miền nam">
+        	<img
+   src="https://vi.wikipedia.org/wiki/Special:FilePath/T%E1%BA%ADp_tin:Summer_roll.jpg"
+   alt="Gỏi Cuốn đặc sản miền Nam"
+   width="300"
+>
+            <div class="food-info">
+                <h3>🥬 Gỏi Cuốn</h3>
+                <p>Tôm, thịt, bún và rau sống cuốn trong bánh tráng,
+                ăn cùng nước chấm đậm vị.</p>
+            </div>
+        </article>
+
+        <article class="food-card" data-name="cơm tấm com tam sườn nướng sài gòn">
+            <img src="https://vi.wikipedia.org/wiki/Special:FilePath/T%E1%BA%ADp_tin:C%C6%A1m_T%E1%BA%A5m,_Da_Nang,_Vietnam.jpg"
+                 alt="Món cơm">
+            <div class="food-info">
+                <h3>🍚 Cơm Tấm</h3>
+                <p>Cơm tấm ăn cùng sườn nướng, bì,
+                chả trứng và nước mắm chua ngọt.</p>
+            </div>
+        </article>
+        <article class="food-card" data-name="cao lầu cao lau hội an miền trung">
+            <img src="https://vi.wikipedia.org/wiki/Special:FilePath/T%E1%BA%ADp_tin:Cao_l%E1%BA%A7u_(144854_994).jpg"
+                 alt="Món mì Việt Nam">
+            <div class="food-info">
+                <h3>🍜 Cao Lầu</h3>
+                <p>Đặc sản Hội An với sợi mì dai,
+                thịt xá xíu và rau sống tươi ngon.</p>
+            </div>
+        </article>
+<article class="food-card" data-name="bánh xèo banh xeo ẩm thực ba miền miền bắc miền trung miền nam">
+            <img src="https://focusasiatravel.vn/wp-content/uploads/2020/01/banh-xeo.jpg"
+                 alt="Bánh Xèo Việt Nam">
+            <div class="food-info">
+                <h3>🌮 Bánh xèo</h3>
+                <p>Bánh xèo là một món ăn dân dã truyền thống nổi tiếng của ẩm thực Việt Nam, có tên gọi xuất phát từ âm thanh "xèo xèo" đặc trưng khi đổ bột gạo pha loãng vào chảo nóng có mỡ hoặc dầu ăn.</p>
+            </div>
+            </article>
+<article class="food-card" data-name="bún chả bun cha ẩm học hà nội miền bắc">
+            <img src="https://vi.wikipedia.org/wiki/Special:FilePath/T%E1%BA%ADp_tin:B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg"
+                 alt="Bún Chả Hà Nội Việt Nam">
+            <div class="food-info">
+                <h3>🥢Bún Chả</h3>
+                <p>Bún chả Hà Nội là một trong những nét tinh túy nhất của ẩm thực thủ đô, kết hợp hài hòa giữa thịt lợn nướng than hoa thơm phức, nước chấm chua ngọt thanh thanh, bún rối và các loại rau sống tươi mát.</p>
+            </div>
+        </article>
+
+    </div>
+    <p id="noResult" style="display:none;text-align:center;margin-top:25px">
+        Không tìm thấy món ăn phù hợp.
+    </p>
+</section>
+
+<section class="region" id="regions">
+    <h2 class="section-title">🌏 Ẩm Thực Ba Miền</h2>
+    <p class="intro">
+        Ba miền Bắc – Trung – Nam, ba sắc thái riêng,
+        cùng làm nên sự phong phú của ẩm thực Việt Nam.
+    </p>
+<section class="region-section">
+    <div class="region-grid">
+        <div class="region-card">
+            <div class="icon">🏯</div>
+            <h3>Miền Bắc</h3>
+            <p>
+                Thanh tao, hài hòa với những món nổi bật
+                như phở Hà Nội, bún chả và bún thang.
+            </p>
+        </div>
+
+        <div class="region-card">
+            <div class="icon">🏮</div>
+            <h3>Miền Trung</h3>
+            <p>
+                Đậm đà, thường có vị cay và cách chế biến
+                tinh tế như bún bò Huế, mì Quảng.
+            </p>
+        </div>
+
+        <div class="region-card mien-nam">
+            <div class="icon">🌴</div>
+            <h3>Miền Nam</h3>
+            <p>
+                Phong phú, phóng khoáng với cơm tấm,
+                bánh xèo và các món ăn từ nguyên liệu miền sông nước.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="about" id="about">
+    <h2 class="section-title">❤️ Hồn Việt Trong Từng Món Ăn</h2>
+    <p>
+        Ẩm thực Việt Nam không chỉ là những món ăn ngon
+        mà còn là nét đẹp văn hóa được lưu truyền qua nhiều thế hệ.
+        Từ mâm cơm gia đình đến những món đặc sản vùng miền,
+        mỗi hương vị đều góp phần kể câu chuyện về đất nước
+        và con người Việt Nam.
+    </p>
+    
+    <a href="#home" class="btn">Quay về đầu trang ↑</a>
+</section>
+
+<script>
+    const searchInput = document.getElementById("search");
+    const foodCards = document.querySelectorAll(".food-card");
+    const noResult = document.getElementById("noResult");
+
+    function normalizeText(text) {
+        return text.toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d")
+            .trim();
+    }
+
+    searchInput.addEventListener("keydown", function(event) {
+        if (event.key !== "Enter") return;
+
+        const keyword = normalizeText(searchInput.value);
+        if (!keyword) return;
+
+        const foundCard = [...foodCards].find(card => {
+            const name = normalizeText(card.dataset.name);
+            const title = normalizeText(
+                card.querySelector("h3").textContent
+            );
+
+            return name.includes(keyword) ||
+                   title.includes(keyword);
+        });
+
+        if (foundCard) {
+            noResult.style.display = "none";
+
+            foundCard.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            foundCard.style.outline = "4px solid #ffd166";
+
+            setTimeout(() => {
+                foundCard.style.outline = "";
+            }, 2500);
+        } else {
+            noResult.style.display = "block";
+            noResult.textContent =
+                "Không tìm thấy món ăn: " + searchInput.value;
+        }
+    });
+</script>
+
+</body>
+</html>
